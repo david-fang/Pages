@@ -1,0 +1,62 @@
+html {
+    height: 100%
+}
+
+body {
+    width: 640px;
+    height: 451px;
+}
+
+html, body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#logo {
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+#bookmark-button {
+    position: absolute;
+    top: 4.5px;
+    left: 590px;
+}
+
+#upper-nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #DA9746;
+    font-size: 15px;
+    box-shadow: 0px 5px 4px lightgray;
+}
+
+#upper-nav-bar li {
+    vertical-align: center;
+    float: left;
+}
+
+#upper-nav-bar li a {
+    top: 0;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#upper-nav-bar li a:hover {
+    background-color: #D2811E;
+}
+
+#upper-nav-bar .active-tab {
+    border-bottom:4px solid white;
+}

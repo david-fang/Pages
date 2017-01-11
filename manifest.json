@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Smart Bookmark",
+  "description": "This bookmarking extension helps to auto-file your bookmarks into folders based on user preference.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_title": "David is a superior being!",
+    "default_icon": "images/book_icon.png",
+    "default_popup": "bookmark.html"
+  },
+  "permissions": [
+    "activeTab"
+    ]
+}
