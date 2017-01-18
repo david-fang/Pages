@@ -22,6 +22,7 @@
     text-decoration: none;
     font-weight: 600;
     opacity: 0.5;
+    outline: none;
 }
 
 #logo {
@@ -34,8 +35,8 @@
 #bookmark-button {
     float: right;
     margin-top: 4.5px;
-    /*padding-right: 10px;*/
     margin-right: 10px;
+    outline: none;
 }
 
 #bookmark-button:hover {
