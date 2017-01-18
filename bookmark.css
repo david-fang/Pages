@@ -15,97 +15,12 @@ html, body {
     overflow: hidden;
 }
 
-#upper-nav-bar {
-    position: relative;
-    top: 0;
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: white;
-    font-size: 14px;
-    box-shadow: 2px 2px 4px 1px lightgray;
-    z-index: 30;
-}
-
-#upper-nav-bar li a {
-    top: 0;
-    float: left;
-    display: inline-block;
-    color: gray;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-weight: 600;
-    opacity: 0.5;
-}
-
-#logo {
-    float: left;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(0, 0, 0, 0.1);
-}
-
-#bookmark-button {
-    float: right;
-    margin-top: 4.5px;
-    padding-right: 10px;
-}
-
-#upper-nav-bar .active-tab {
-    color: #D2811E;
-    opacity: 1.0;
-    border-bottom:4px solid #D2811E;
-}
-
-#upper-nav-bar li a:hover {
-    opacity: 1.0;
-}
-
 #content-container {
     position: absolute;
     top: 50px;
     bottom: 0;
     left: 0;
     right: 0;
-}
-
-#left-anchor {
-    width: 40%;
-    height: 100%;
-    text-align: center;
-    float: left;
-    background-color: white;
-}
-
-#bookmarks-table {
-    float: left;
-    display: table;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-}
-
-#bookmarks-table tbody {
-    position: relative;
-    overflow: auto;
-    float: left;
-    width: 100%;
-    height: 100%
-}
-
-#bookmarks-table tr {
-    width: 100%;
-    display: table;
-    text-align: left;
-}
-
-#bookmarks-table td {
-    padding: 10px 10px;
-    font-size: 14px;
-    width: 33%;
 }
 
 #right-anchor {

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Smart Bookmark",
+  "name": "Pages",
   "description": "This bookmarking extension helps to auto-file your bookmarks into folders based on user preference.",
   "version": "1.0",
 
@@ -10,7 +10,14 @@
     "default_icon": "images/book_icon.png",
     "default_popup": "bookmark.html"
   },
+
   "permissions": [
-    "activeTab"
-    ]
+    "activeTab",
+    "bookmarks"
+  ],
+
+  // ONLY FOR TESTING PURPOSES
+  "chrome_url_overrides": {
+    "newtab": "bookmark.html"
+  }
 }
