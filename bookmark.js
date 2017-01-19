@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 
-/** ====== BOOKMARK HANDLING FUNCTIONS ====== */
+/** ====== BOOKMARK HANDLING FUNCTIONS ====== **/
+
 
 /**
  * [Handler function] Processes all bookmarks to bookmarks table.
