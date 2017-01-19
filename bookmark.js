@@ -24,18 +24,6 @@ function processBookmark(bookmarks) {
     }
 }
 
-function getTabUrl() {
-    chrome.tabs.getSelected(null, function(tab) {
-        return tab.url;
-    });
-}
-
-function getTabTitle() {
-    chrome.tabs.getSelected(null, function(tab) {
-        return tab.title;
-    })
-}
-
 function appendToTable(bookmark) {
     var bookmarksTable = document.getElementById("bookmarks-table");
     var row = bookmarksTable.insertRow(-1);
@@ -46,17 +34,18 @@ function appendToTable(bookmark) {
 }
 
 function bookmarkPage() {
-    var curUrl = chrome.tabs.getSelected(null, function(tab) {
-        return tab.url;
+    chrome.tabs.getSelected(null, function(tab) {
+        var tabUrl = tab.url;
+        var defaultTitle = tab.title;
+
+        var e = document.getElementById("info");
+        e.innerHTML = tab.title;
+
+        chrome.bookmarks.create({
+            'title': defaultTitle,
+            'url': tabUrl
+        });
     });
-
-    var defaultTitle = getTabTitle();
-
-    var h = document.getElementById("info");
-    h.innerHTML = curUrl;
-
-
-    chrome.bookmarks.create({'title': defaultTitle, 'url': curUrl});
 }
 
 String.prototype.trunc = String.prototype.trunc ||

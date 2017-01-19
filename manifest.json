@@ -11,6 +11,12 @@
     "default_popup": "bookmark.html"
   },
 
+  "icons": {
+    "16": "images/book_solid_x16.png",
+    "48": "images/book_solid_x48.png",
+    "128": "images/book_solid_x128.png"
+  },
+
   "permissions": [
     "activeTab",
     "bookmarks"
