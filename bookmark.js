@@ -23,24 +23,23 @@ function processBookmark(bookmarks) {
     for (var i = 0; i < bookmarks.length; i++) {
         var bookmark = bookmarks[i];
 
-        if (bookmark.url) {
-            if (bookmark.url === "chrome://bookmarks/") {
-                continue;
-            } else {
-                appendToTable(bookmark);
-            }
-        } else if (bookmark.children) {
-            processBookmark(bookmark.children);
-        }
-
-        // if (bookmark.children) {
-
-        //     if (bookmark.title && bookmark.parentId !== "0") {
+        // if (bookmark.url) {
+        //     if (bookmark.url === "chrome://bookmarks/") {
+        //         continue;
+        //     } else {
         //         appendToTable(bookmark);
         //     }
-
+        // } else if (bookmark.children) {
         //     processBookmark(bookmark.children);
         // }
+
+        if (bookmark.children) {
+            if (bookmark.title && bookmark.parentId !== "0") {
+                appendToTable(bookmark);
+            }
+
+            processBookmark(bookmark.children);
+        }
     }
 }
 
@@ -57,7 +56,7 @@ function appendToTable(bookmark) {
     row.setAttribute("id", bookmark.id);
 
     var cell = row.insertCell(0);
-    cell.innerHTML = bookmark.title.trunc(28);
+    cell.innerHTML = bookmark.title;
 }
 
 /**

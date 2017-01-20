@@ -24,11 +24,17 @@ html, body {
 }
 
 #right-anchor {
-    width: 60%;
+    width: auto;
     height: 100%;
     text-align: center;
     float: right;
     background-color: white;
+    overflow: hidden;
 }
 
+#preview-window {
+    width: 440px;
+    height: 100%;
+    float: left;
+}
 
