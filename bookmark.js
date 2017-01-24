@@ -5,7 +5,7 @@ var e = null;
 document.addEventListener("DOMContentLoaded", function(event) {
     e = document.getElementById("info");
 
-    chrome.bookmarks.getTree(processBookmark);
+    chrome.bookmarks.getTree(processFolders);
     setInitBookmarkState();
     document.getElementById("bookmark-button").onclick = bookmarkButtonHandler;
 });
@@ -15,6 +15,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 /**
+ * [Handler function] Processes all bookmark folders to table.
+ * 
+ * @param  {BookmarkTreeNode array} bookmarks
+ */
+function processFolders(bookmarks) {
+    for (var i = 0; i < bookmarks.length; i++) {
+        var bookmark = bookmarks[i];
+        if (bookmark.children) {
+            if (bookmark.title && bookmark.parentId !== "0") {
+                appendToTable(bookmark);
+            }
+
+            processFolders(bookmark.children);
+        }
+    }
+}
+
+/**
  * [Handler function] Processes all bookmarks to bookmarks table.
  * 
  * @param {BookmarkTreeNode array} bookmarks
@@ -22,22 +40,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function processBookmark(bookmarks) {
     for (var i = 0; i < bookmarks.length; i++) {
         var bookmark = bookmarks[i];
-
-        // if (bookmark.url) {
-        //     if (bookmark.url === "chrome://bookmarks/") {
-        //         continue;
-        //     } else {
-        //         appendToTable(bookmark);
-        //     }
-        // } else if (bookmark.children) {
-        //     processBookmark(bookmark.children);
-        // }
-
-        if (bookmark.children) {
-            if (bookmark.title && bookmark.parentId !== "0") {
+        if (bookmark.url) {
+            if (bookmark.url === "chrome://bookmarks/") {
+                continue;
+            } else {
                 appendToTable(bookmark);
             }
-
+        } else if (bookmark.children) {
             processBookmark(bookmark.children);
         }
     }
@@ -50,7 +59,7 @@ function processBookmark(bookmarks) {
  * @param {BookmarkTreeNode} [bookmark]
  */
 function appendToTable(bookmark) {
-    var bookmarksTable = document.getElementById("bookmarks-table");
+    var bookmarksTable = document.getElementById("folders-table");
     var row = bookmarksTable.insertRow(-1);
     row.setAttribute("class", "clickable-row");
     row.setAttribute("id", bookmark.id);

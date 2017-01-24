@@ -1,76 +1,65 @@
-#right-anchor {
-    width: auto;
+#left-anchor {
+    width: 37%;
     height: 100%;
     text-align: center;
-    float: right;
-    background-color: white;
-    overflow: hidden;
-}
-
-
-#bookmarks-table {
-    display: table;
-    width: 440px;
-    height: 100%;
     float: left;
+    background-color: white;
+    border-right: 1px solid lightgray;
 }
 
-#bookmarks-table tbody {
+#folders-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+#folders-table tbody {
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
-    float: right;
+    float: left;
     width: 100%;
     height: 100%
 }
 
-#bookmarks-table tr {
-    width: 100%;
-    display: table;
-    text-align: left;
-    border-bottom: 1px solid lightgray;
-}
-
-/*
-
-#bookmarks-table tbody::-webkit-scrollbar {
+#folders-table tbody::-webkit-scrollbar {
     width: 8px;
     background-color: transparent;
 }
 
-#bookmarks-table tbody::-webkit-scrollbar-track {
+#folders-table tbody::-webkit-scrollbar-track {
     border-radius: 10px;
     background-color: transparent;
     background: transparent;
 }
 
-#bookmarks-table tbody::-webkit-scrollbar-thumb {
+#folders-table tbody::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: lightgray;
 }
 
-#bookmarks-table tr {
+#folders-table tr {
     width: 100%;
     display: table;
     text-align: left;
-    border-bottom: 1px solid lightgray;
+    /*border-bottom: 1px solid lightgray;*/
 }
 
-#bookmarks-table tr.clickable-row {
+#folders-table tr.clickable-row {
     cursor: pointer;
 }
 
-#bookmarks-table tr.clickable-row:hover {
+#folders-table tr.clickable-row:hover {
     border-left: 3px solid #D2811E;
 }
 
-#bookmarks-table td {
+#folders-table td {
     padding: 10px 10px;
     font-size: 14px;
     max-width: 220px;
-    max-height: your value;
+    /*max-height: your value;*/
+    white-space: nowrap;     /*REMOVE FOR AUTO-INDENT*/
     text-overflow:ellipsis;
     overflow: hidden;
 }
 
-*/

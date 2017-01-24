@@ -22,19 +22,3 @@ html, body {
     left: 0;
     right: 0;
 }
-
-#right-anchor {
-    width: auto;
-    height: 100%;
-    text-align: center;
-    float: right;
-    background-color: white;
-    overflow: hidden;
-}
-
-#preview-window {
-    width: 440px;
-    height: 100%;
-    float: left;
-}
-
